@@ -1,21 +1,24 @@
 package fr.uvsq.cprog.collex;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
+import java.util.stream.*;
+import java.util.Properties;
 
 public class Dns {
-    private ArrayList<DnsItem> baseDeDonnees;
     private Path dnsFile;
+    private ArrayList<DnsItem> baseDeDonnees;
     
-    public Dns(Path path) {
-        this.dnsFile = path;
+    public Dns() {
         baseDeDonnees = new ArrayList<>();
         try {
+            String filePath = System.getProperty("dns.file.path");
+            dnsFile = Path.of(filePath);
+            
             if (Files.exists(dnsFile)) {
                 List<String> lines = Files.readAllLines(dnsFile);
                 for (String line : lines) {
