@@ -35,6 +35,14 @@ public class AdresseIP {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (o instanceof AdresseIP) {
+            return ip.equals(((AdresseIP) o).ip);
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
         return ip;
     }

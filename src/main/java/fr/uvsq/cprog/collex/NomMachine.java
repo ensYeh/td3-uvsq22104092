@@ -24,6 +24,14 @@ public class NomMachine {
     }
     
     @Override
+    public boolean equals(Object o) {
+        if (o instanceof NomMachine) {
+            return nom.equals(((NomMachine) o).nom);
+        }
+        return false;
+    }
+
+    @Override
     public String toString() {
         return nom;
     }
