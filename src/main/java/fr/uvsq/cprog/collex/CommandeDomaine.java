@@ -18,7 +18,6 @@ public class CommandeDomaine implements Commande {
     public void execute() {
         List<DnsItem> items = dns.getItems(domaine);
         if (trie) {
-            //System.out.println("à faire : trier");
             items.sort(Comparator.comparing(item -> item.getAdresseIP().toString()));
         }
         for (DnsItem item : items) {
