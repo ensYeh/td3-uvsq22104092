@@ -17,6 +17,7 @@ public class Dns {
         baseDeDonnees = new ArrayList<>();
         try {
             String filePath = System.getProperty("dns.file.path");
+            if (filePath == null) {filePath = "dnsFile.txt";}
             dnsFile = Path.of(filePath);
             
             if (Files.exists(dnsFile)) {
