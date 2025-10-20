@@ -10,7 +10,7 @@ public class AdresseIP {
         this.ip = ip;
     }
 
-    public boolean estValideIP(String ip) {
+    public static boolean estValideIP(String ip) {
         String[] parts = ip.split("\\.");
         if (parts.length != 4) {
             return false;

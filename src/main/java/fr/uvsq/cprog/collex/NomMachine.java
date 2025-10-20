@@ -10,7 +10,7 @@ public class NomMachine {
         this.nom = nom;
     }    
 
-    public boolean estValideNom(String nom) {
+    public static boolean estValideNom(String nom) {
         String[] parts = nom.split("\\.");
         if (parts.length!=3)
         {
